@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-24 13:43:25.262488",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rent_amount",
+  "tenant",
+  "start_date",
+  "date_of_expiry",
+  "shop",
+  "rent_payment_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "date_of_expiry",
+   "fieldtype": "Date",
+   "label": "Date of Expiry"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant ",
+   "options": "Tenant Information"
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop"
+  },
+  {
+   "fieldname": "rent_payment_status",
+   "fieldtype": "Select",
+   "label": "Rent payment Status",
+   "options": "Paid\nUnpaid"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-26 11:19:03.406790",
+ "modified_by": "Administrator",
+ "module": "AeroShops Tracker",
+ "name": "Contract Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

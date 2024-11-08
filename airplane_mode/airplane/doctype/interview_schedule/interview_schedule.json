@@ -10,20 +10,23 @@
   "interviewer_name",
   "role_applied",
   "interview_date",
-  "status"
+  "status",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "candidate_name",
    "fieldtype": "Link",
    "label": "Candidate Name",
-   "options": "Candidate Data"
+   "options": "Candidate Data",
+   "reqd": 1
   },
   {
    "fieldname": "interviewer_name",
    "fieldtype": "Link",
    "label": "Interviewer Name",
-   "options": "Interviewer"
+   "options": "Interviewer",
+   "reqd": 1
   },
   {
    "fetch_from": "candidate_name.applied_role",
@@ -35,7 +38,8 @@
    "fieldname": "interview_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Interview Date"
+   "label": "Interview Date",
+   "reqd": 1
   },
   {
    "fieldname": "status",
@@ -43,11 +47,22 @@
    "in_standard_filter": 1,
    "label": "Status",
    "options": "Hired\nRejected\nIn Progress"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Interview Schedule",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-09-18 16:23:40.556840",
+ "modified": "2024-10-02 19:53:34.392169",
  "modified_by": "Administrator",
  "module": "Airplane",
  "name": "Interview Schedule",

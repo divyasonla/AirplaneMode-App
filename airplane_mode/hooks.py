@@ -227,3 +227,4 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+app_include_js = "/airplane_mode/airplane_mode/api.js"

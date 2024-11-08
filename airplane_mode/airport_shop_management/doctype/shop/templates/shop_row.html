@@ -1,0 +1,60 @@
+<div class="shop-container">
+    <div class="shop-details">
+        <h1><a href="{{ doc.route }}">{{ doc.shop_name or doc.name }}</a></h1>
+        <h4>Shop Number : {{ shop_number }}</h4>
+        <h4>Shop Name : {{ airport }}</h4>
+        <h4>Tenant Name : {{ tenant }}</h4>
+        <a class="btn btn-info" href="{{ doc.route }}">View</a>
+    </div>
+</div>
+
+<style>
+	/* CSS for styling the shop container */
+.shop-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.shop-details {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.shop-details h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.shop-details h4 {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.shop-details a.btn-info {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #17a2b8;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.shop-details a.btn-info:hover {
+    background-color: #138496;
+}
+
+</style>
+
+<!-- this is a sample default list template -->

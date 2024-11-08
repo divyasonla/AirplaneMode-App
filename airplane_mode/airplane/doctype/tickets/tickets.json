@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-24 12:45:10.445258",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ticket_id",
+  "passenger",
+  "flight_number",
+  "gate_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "ticket_id",
+   "fieldtype": "Data",
+   "label": "Ticket ID"
+  },
+  {
+   "fieldname": "passenger",
+   "fieldtype": "Link",
+   "label": "Passenger",
+   "options": "Flight Passenger"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
+  },
+  {
+   "fieldname": "flight_number",
+   "fieldtype": "Link",
+   "label": "Flight Number",
+   "options": "Flight"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-24 12:59:51.820145",
+ "modified_by": "Administrator",
+ "module": "Airplane",
+ "name": "Tickets",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

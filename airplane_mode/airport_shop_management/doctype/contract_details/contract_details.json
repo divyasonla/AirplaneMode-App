@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{YYYY}{MM}{####}",
+ "creation": "2024-10-24 13:43:25.262488",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shop_name",
+  "tenant_name",
+  "rent_amount",
+  "column_break_jgae",
+  "contract_start_date",
+  "contract_end_date",
+  "status"
+ ],
+ "fields": [
+  {
+   "default": "50000",
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rent Amount",
+   "non_negative": 1
+  },
+  {
+   "fetch_from": "payment_id.payment_end_date",
+   "fieldname": "contract_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Contract End Date"
+  },
+  {
+   "fieldname": "column_break_jgae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Contract Start Date"
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shop name",
+   "options": "Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tenant Name",
+   "options": "Tenant Information",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nExpired"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Rent Payment",
+   "link_fieldname": "contract"
+  }
+ ],
+ "modified": "2024-11-07 14:53:38.173145",
+ "modified_by": "Administrator",
+ "module": "Airport-Shop-Management",
+ "name": "Contract Details",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
