@@ -11,6 +11,7 @@
   "tenant",
   "shop_number",
   "area",
+  "due_date",
   "column_break_lobu",
   "airport",
   "status",
@@ -91,6 +92,11 @@
    "fieldname": "shop_image",
    "fieldtype": "Attach Image",
    "label": "Shop Image"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date"
   }
  ],
  "has_web_view": 1,
@@ -106,7 +112,7 @@
    "link_fieldname": "shop_name"
   }
  ],
- "modified": "2024-11-08 11:05:35.624278",
+ "modified": "2024-11-09 09:54:16.773131",
  "modified_by": "Administrator",
  "module": "Airport-Shop-Management",
  "name": "Shop",

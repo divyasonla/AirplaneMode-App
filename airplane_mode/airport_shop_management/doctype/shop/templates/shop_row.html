@@ -1,13 +1,15 @@
+{% if status == "Available" %}
 <div class="shop-container">
     <div class="shop-details">
         <h1><a href="{{ doc.route }}">{{ doc.shop_name or doc.name }}</a></h1>
         <h4>Shop Number : {{ shop_number }}</h4>
         <h4>Shop Name : {{ airport }}</h4>
         <h4>Tenant Name : {{ tenant }}</h4>
+        <h4>Status : {{ status }}</h4>
         <a class="btn btn-info" href="{{ doc.route }}">View</a>
     </div>
 </div>
-
+{% endif %}
 <style>
 	/* CSS for styling the shop container */
 .shop-container {

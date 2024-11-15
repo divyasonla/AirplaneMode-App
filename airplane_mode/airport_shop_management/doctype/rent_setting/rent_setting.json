@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{rent_amount}",
  "creation": "2024-11-06 16:18:09.270149",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -24,10 +25,11 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-11-06 16:19:26.761220",
+ "modified": "2024-11-09 18:57:59.274174",
  "modified_by": "Administrator",
  "module": "Airport-Shop-Management",
- "name": "Shop Setting",
+ "name": "Rent Setting",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

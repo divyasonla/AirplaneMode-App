@@ -151,6 +151,15 @@ app_license = "mit"
 # 	],
 # }
 
+# scheduler_events = {
+# "hourly":[
+#     "airplane_mode.rent_reminder.send_rent_reminders"
+# ],
+# "monthly": [
+# 		"airplane_mode.rent_reminder.send_rent_reminders"
+# ],
+
+# }
 # Testing
 # -------
 

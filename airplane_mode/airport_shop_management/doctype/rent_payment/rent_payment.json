@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Receipt-{shop}-{YYYY}{MM}{####}",
+ "autoname": "format:Re-{YYYY}{MM}{####}",
  "creation": "2024-10-24 13:45:42.803296",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,36 +12,39 @@
   "shop",
   "column_break_reke",
   "amount_paid",
-  "payment_details_section",
   "payment_status",
+  "payment_details_section",
+  "payment_date",
   "receipt",
   "column_break_brdc",
-  "payment_date",
   "payment_method"
  ],
  "fields": [
   {
-   "fetch_from": "contract.tenant",
+   "fetch_from": "contract.tenant_name",
    "fieldname": "tenant",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Tenant",
-   "options": "Tenant Information"
+   "options": "Tenant Information",
+   "read_only": 1
   },
   {
-   "fetch_from": "contract.shop",
+   "fetch_from": "contract.shop_name",
    "fieldname": "shop",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Shop ",
-   "options": "Shop"
+   "options": "Shop",
+   "read_only": 1
   },
   {
    "fetch_from": "contract.rent_amount",
    "fieldname": "amount_paid",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Amount"
+   "label": "Amount",
+   "read_only": 1
   },
   {
    "fieldname": "payment_date",
@@ -59,7 +62,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Payment Status",
-   "options": "Paid\nunpaid"
+   "options": "Unpaid\nPaid"
   },
   {
    "fieldname": "payment_method",
@@ -94,7 +97,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-07 12:20:29.814773",
+ "modified": "2024-11-13 12:13:47.012965",
  "modified_by": "Administrator",
  "module": "Airport-Shop-Management",
  "name": "Rent Payment",

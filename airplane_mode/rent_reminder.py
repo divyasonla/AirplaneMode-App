@@ -1,13 +1,30 @@
+# import frappe
 import frappe
-from frappe.utils import getdate, nowdate
+settings = frappe.get_doc("Rent Setting")
+if settings.rent_reminders:
+    unpaid_contracts = frappe.get_all(
+        "Contract Details",
+        filters={"status": "Unpaid"},
+        fields=["tenant_name", "name","tenant_email","rent_amount"]
+    )
 
-def send_rent_reminders():
-    shops = frappe.get_all("Shop", filters={"status": "Occupied"})
-    settings = frappe.get_single("Shop Settings")
-
-    if settings.enable_rent_reminders:
-        for shop in shops:
-            tenant_email = frappe.db.get_value("Tenant", shop.tenant, "email")  # Assuming you have a Tenant DocType
-            rent_due_date = getdate(shop.due_date)  # Assuming you store due date in Shop DocType
-            if rent_due_date <= nowdate():
-                frappe.sendmail(recipients=tenant_email, subject="Rent Reminder", message="Your rent is due!")
+    if unpaid_contracts:
+        for contract in unpaid_contracts:
+            if contract.tenant_email:
+                try:
+                    frappe.sendmail(
+                        recipients=contract.tenant_email,
+                        subject="Rent Payment Reminder",
+                        content=f"Dear {contract.tenant_name},\n\nThis is a reminder to pay your rent of {contract.rent_amount}. Please make the payment at the earliest.",
+                        cc="divyasonla143@gmail.com", 
+                        now=True
+                    )
+                    frappe.log(f"Reminder sent to {contract.tenant_email} for Contract Details {contract.name}.")
+                except Exception as ex:
+                    frappe.log_error(message=str(ex), title="Rent Reminder Email Sending Error")
+            else:
+                frappe.log_error(f"No email found for Lease Contract {contract.name}", title="Missing Tenant Email")
+    else:
+        frappe.log("No unpaid contracts found for rent reminders.")
+else:
+    frappe.log("Rent reminders are disabled in Rent Settings.")

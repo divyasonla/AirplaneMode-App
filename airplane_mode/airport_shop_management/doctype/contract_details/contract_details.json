@@ -9,6 +9,7 @@
   "shop_name",
   "tenant_name",
   "rent_amount",
+  "tenant_email",
   "column_break_jgae",
   "contract_start_date",
   "contract_end_date",
@@ -16,14 +17,14 @@
  ],
  "fields": [
   {
-   "default": "50000",
    "fieldname": "rent_amount",
    "fieldtype": "Currency",
    "in_filter": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Rent Amount",
-   "non_negative": 1
+   "non_negative": 1,
+   "options": "Rent Setting"
   },
   {
    "fetch_from": "payment_id.payment_end_date",
@@ -65,7 +66,13 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nExpired"
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fetch_from": "tenant_name.email",
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "label": "Tenant Email"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -75,7 +82,7 @@
    "link_fieldname": "contract"
   }
  ],
- "modified": "2024-11-07 14:53:38.173145",
+ "modified": "2024-11-12 16:13:55.940499",
  "modified_by": "Administrator",
  "module": "Airport-Shop-Management",
  "name": "Contract Details",
